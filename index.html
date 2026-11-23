@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      transition: background-color 0.4s ease;
+    }
+
+    main {
+      text-align: center;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #2563eb;
+      color: white;
+    }
+
+    button:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>¡Bienvenido, Laura Armas!</h1>
+    <button id="changeColor">Cambiar color de fondo</button>
+  </main>
+
+  <script>
+    const colores = [
+      "#fee2e2",
+      "#dcfce7",
+      "#dbeafe",
+      "#fef3c7",
+      "#f3e8ff",
+      "#cffafe"
+    ];
+
+    let indice = 0;
+
+    document.getElementById("changeColor").addEventListener("click", () => {
+      indice = (indice + 1) % colores.length;
+      document.body.style.backgroundColor = colores[indice];
+    });
+  </script>
+</body>
+</html>
